@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Politique de confidentialité, Argentique</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="brand">Argentique</div>
+  <h1>Politique de confidentialité</h1>
+  <p class="updated">Dernière mise à jour : 27 juillet 2026 : version 1.0.0</p>
+</header>
+
+<main>
+
+<div class="note">
+  <p><strong>En une phrase :</strong> Argentique fonctionne entièrement sur votre
+  téléphone. L'application n'a pas de serveur, ne crée aucun compte, et la version
+  publiée ne dispose même pas de la permission Android d'accès à Internet, aucune
+  donnée ne peut techniquement en sortir.</p>
+</div>
+
+<h2>1. Qui édite cette application</h2>
+
+<p>
+  Argentique est éditée par <span class="todo">[À COMPLÉTER : nom ou raison sociale]</span>,
+  <span class="todo">[statut juridique]</span>, immatriculée sous le numéro
+  <span class="todo">[SIREN / SIRET]</span>, dont le siège est situé
+  <span class="todo">[adresse]</span>.
+</p>
+<p>
+  Contact : <span class="todo">[adresse e-mail de contact]</span>
+</p>
+<p>
+  L'éditeur est responsable de traitement au sens du Règlement général sur la
+  protection des données (RGPD) pour les seuls traitements décrits ci-dessous,
+  lesquels se réduisent, en pratique, à un traitement local sur votre appareil.
+</p>
+
+<h2>2. Ce qu'Argentique ne fait pas</h2>
+
+<p>Les affirmations suivantes portent sur la version publiée sur Google Play :</p>
+
+<ul>
+  <li>Aucun compte utilisateur, aucune inscription, aucune identification.</li>
+  <li>Aucun serveur : l'éditeur n'exploite aucune infrastructure qui recevrait vos données.</li>
+  <li>Aucun outil de mesure d'audience, d'analytique, de suivi de plantage ou de télémétrie.</li>
+  <li>Aucune publicité, aucun traceur publicitaire, aucun identifiant publicitaire lu.</li>
+  <li>Aucune revente, location ou communication de données à un tiers.</li>
+</ul>
+
+<p>
+  Cette absence n'est pas seulement une politique : la version publiée est
+  construite sans la permission Android <code>INTERNET</code>. En son absence, le
+  système d'exploitation refuse toute connexion réseau au niveau du noyau, quelle
+  que soit la partie du code qui la tenterait, y compris une bibliothèque tierce.
+</p>
+
+<h2>3. Les données que vous importez</h2>
+
+<p>
+  Argentique lit l'archive de données que Meta vous fournit à votre demande, sous
+  forme d'un ou plusieurs fichiers <code>.zip</code>. Cette archive vous appartient
+  et vous concerne. Elle peut contenir, selon ce que vous avez demandé à Meta :
+  publications, stories, messages privés, contacts, commentaires, mentions
+  « j'aime », ainsi que des informations sensibles comme votre adresse e-mail,
+  votre numéro de téléphone ou un historique de connexions.
+</p>
+
+<h3>Où ces données sont stockées</h3>
+
+<table>
+  <tr><th>Emplacement</th><th>Contenu</th></tr>
+  <tr>
+    <td>Le fichier <code>.zip</code> d'origine</td>
+    <td>Là où vous l'avez placé. Argentique le lit sans jamais le modifier, le déplacer ni le copier intégralement.</td>
+  </tr>
+  <tr>
+    <td>Base de données locale (SQLite)</td>
+    <td>Le texte et les références extraits de l'archive : légendes, messages, pseudonymes, dates, et les <em>chemins</em> des médias dans le zip. Aucune image ni vidéo n'y est stockée.</td>
+  </tr>
+  <tr>
+    <td>Cache média local (150 Mo maximum)</td>
+    <td>Les seules photos et vidéos que vous avez effectivement affichées, extraites à la demande, remplacées par les plus récentes quand la limite est atteinte.</td>
+  </tr>
+  <tr>
+    <td>Préférences locales</td>
+    <td>Thème clair ou sombre, palette d'époque, contenus débloqués par achat. Aucune donnée personnelle.</td>
+  </tr>
+</table>
+
+<p>
+  Ces quatre emplacements se trouvent dans l'espace de stockage privé
+  qu'Android réserve à l'application, inaccessible aux autres applications.
+</p>
+
+<h3>Base légale</h3>
+
+<p>
+  Le traitement repose sur l'exécution du service que vous demandez : sans lecture
+  de l'archive, l'application n'a aucune fonction. Aucun traitement ne repose sur
+  votre consentement à des fins de mesure ou de publicité, puisqu'il n'en existe
+  aucun.
+</p>
+
+<h3>Durée de conservation</h3>
+
+<p>
+  Les données restent sur votre appareil aussi longtemps que vous le décidez.
+  Elles disparaissent :
+</p>
+<ul>
+  <li>archive par archive, depuis <strong>Réglages → Archives importées</strong> ;</li>
+  <li>intégralement, depuis <strong>Réglages → Tout supprimer</strong> ;</li>
+  <li>intégralement, en désinstallant l'application.</li>
+</ul>
+<p>
+  Dans tous les cas, vos fichiers <code>.zip</code> d'origine ne sont pas touchés.
+</p>
+
+<h2>4. Permissions Android demandées</h2>
+
+<table>
+  <tr><th>Permission</th><th>Pourquoi</th></tr>
+  <tr>
+    <td>Accès à un fichier que vous choisissez</td>
+    <td>Vous sélectionnez vous-même votre archive via le sélecteur de fichiers du système. Argentique n'obtient l'accès qu'à ce fichier précis, pas à votre stockage.</td>
+  </tr>
+  <tr>
+    <td>Lecture du stockage <em>(Android 12 et antérieurs uniquement)</em></td>
+    <td>Requise par le système sur ces versions pour ouvrir le fichier que vous avez désigné.</td>
+  </tr>
+  <tr>
+    <td>Vibration</td>
+    <td>Retours haptiques de l'interface.</td>
+  </tr>
+</table>
+
+<p>
+  La version publiée ne demande <strong>ni</strong> l'accès à Internet,
+  <strong>ni</strong> la localisation, <strong>ni</strong> les contacts,
+  <strong>ni</strong> la caméra, <strong>ni</strong> le microphone,
+  <strong>ni</strong> la superposition aux autres applications.
+</p>
+
+<h2>5. Achats intégrés</h2>
+
+<p>
+  Argentique propose des contenus payants (voir les
+  <a href="cgv.html">conditions générales de vente</a>). Les paiements sont
+  intégralement traités par <strong>Google Play</strong>.
+</p>
+<ul>
+  <li>Argentique ne voit, ne reçoit et ne stocke aucune coordonnée bancaire.</li>
+  <li>L'application ne conserve localement qu'un indicateur de ce qui a été débloqué.</li>
+  <li>Le traitement de vos données de paiement par Google relève de la
+      politique de confidentialité de Google, sur laquelle l'éditeur n'a pas de prise.</li>
+</ul>
+
+<h2>6. Liens vers l'extérieur</h2>
+
+<p>
+  Certains écrans proposent d'ouvrir une page web, la présente politique, les
+  conditions générales, ou un formulaire d'avis. Ces liens sont remis à votre
+  navigateur, qui quitte alors l'application. Argentique ne transmet rien au
+  passage : aucune donnée de votre archive, aucun identifiant, aucune statistique.
+  L'application vous prévient avant chaque ouverture.
+</p>
+
+<h2>7. Transferts hors de l'Union européenne</h2>
+
+<p>
+  Aucun. Aucune donnée traitée par Argentique ne quitte votre appareil, donc aucune
+  ne franchit de frontière.
+</p>
+
+<h2>8. Vos droits</h2>
+
+<p>
+  Le RGPD vous reconnaît des droits d'accès, de rectification, d'effacement, de
+  limitation, d'opposition et de portabilité. Comme l'éditeur ne détient aucune de
+  vos données, ces droits s'exercent directement depuis l'application :
+</p>
+<ul>
+  <li><strong>Accès et portabilité</strong> : vos données sont votre archive
+      <code>.zip</code>, que vous détenez déjà et qu'Argentique ne modifie pas.</li>
+  <li><strong>Effacement</strong> : Réglages → Tout supprimer, ou désinstallation.</li>
+</ul>
+<p>
+  Pour toute question, écrivez à <span class="todo">[adresse e-mail de contact]</span>.
+  Vous pouvez également introduire une réclamation auprès de la Commission
+  nationale de l'informatique et des libertés (CNIL), 3 place de Fontenoy,
+  75334 Paris Cedex 07 : <a href="https://www.cnil.fr">www.cnil.fr</a>.
+</p>
+
+<h2>9. Enfants</h2>
+
+<p>
+  Argentique n'est pas destinée aux personnes de moins de 13 ans, et ne collecte
+  aucune donnée permettant de déterminer l'âge de ses utilisateurs.
+</p>
+
+<h2>10. Sécurité</h2>
+
+<p>
+  Vos données reposent sur les protections d'Android : espace de stockage privé à
+  l'application et chiffrement du stockage de l'appareil. Nous vous recommandons de
+  protéger votre téléphone par un code, une empreinte ou un schéma, une archive
+  Meta est un document hautement personnel, et quiconque déverrouille votre
+  téléphone y accède.
+</p>
+
+<h2>11. Modifications</h2>
+
+<p>
+  Toute évolution de cette politique sera publiée sur cette page avec une nouvelle
+  date de mise à jour. Un changement qui remettrait en cause le principe du
+  fonctionnement hors-ligne serait signalé dans l'application elle-même, et non
+  seulement ici.
+</p>
+
+</main>
+
+<footer>
+  <p>
+    <a href="index.html">Documents légaux</a> ·
+    <a href="cgu.html">CGU</a> ·
+    <a href="cgv.html">CGV</a> ·
+    <a href="mentions-legales.html">Mentions légales</a>
+  </p>
+  <p>Argentique n'est ni affiliée à, ni sponsorisée par, ni approuvée par Meta Platforms, Inc.</p>
+</footer>
+
+</body>
+</html>

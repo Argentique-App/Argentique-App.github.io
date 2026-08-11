@@ -1,0 +1,126 @@
+/* Feuille commune aux pages légales d'Argentique.
+   Autonome : aucune police distante, aucun script, aucune requête sortante, une
+   page qui traquerait ses lecteurs contredirait ce qu'elle affirme. */
+
+:root {
+  --paper: #f5efe3;
+  --ink: #1c1a17;
+  --ink-soft: #6b6357;
+  --accent: #e2732a;
+  --rule: #e0d6c4;
+  --card: #fffaf1;
+  /* L'orange de marque décore (sur-titres, filets) mais ne peut pas écrire :
+     #e2732a sur le fond crème donne 2,9:1, sous le seuil AA de 4,5:1. Les liens
+     prennent donc la même teinte, assez foncée pour être lue. */
+  --link: #a8491a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #14120f;
+    --ink: #f0e9dd;
+    --ink-soft: #9a9184;
+    --accent: #f0913f;
+    --rule: #2e2822;
+    --card: #1c1915;
+    /* Polarité inversée : sur fond sombre l'orange clair est lisible (7,9:1). */
+    --link: #f0913f;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0 1.25rem 5rem;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+main { max-width: 44rem; margin: 0 auto; }
+
+header {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 2.5rem 0 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+header .brand {
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+h1 { font-size: 1.75rem; line-height: 1.25; margin: 0.6rem 0 0.35rem; }
+h2 { font-size: 1.15rem; margin: 2.25rem 0 0.6rem; }
+h3 { font-size: 1rem; margin: 1.5rem 0 0.4rem; }
+
+.updated { color: var(--ink-soft); font-size: 0.85rem; margin: 0; }
+
+p, li { color: var(--ink); }
+ul, ol { padding-left: 1.25rem; }
+li { margin: 0.3rem 0; }
+
+a { color: var(--link); }
+
+strong { font-weight: 650; }
+
+.note {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: 0.5rem;
+  padding: 0.9rem 1.1rem;
+  margin: 1.25rem 0;
+}
+
+.note p:first-child { margin-top: 0; }
+.note p:last-child { margin-bottom: 0; }
+
+/* Marqueur des informations que l'éditeur doit renseigner avant publication.
+   Volontairement criard : une page légale mise en ligne avec un trou dedans est
+   pire que pas de page du tout. */
+.todo {
+  background: #ffe8b0;
+  color: #6b4a00;
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  font-size: 0.92em;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.94rem;
+  display: block;
+  overflow-x: auto;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.55rem 0.7rem;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+
+th { color: var(--ink-soft); font-weight: 600; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+nav.toc { margin: 1.5rem 0 0; }
+nav.toc ul { list-style: none; padding: 0; }
+nav.toc li { margin: 0.45rem 0; }
+
+footer {
+  max-width: 44rem;
+  margin: 3rem auto 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}

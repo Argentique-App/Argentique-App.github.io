@@ -1,0 +1,265 @@
+/* Page d'accueil d'Argentique.
+
+   Même principe que legal/style.css, et ce n'est pas une coquetterie : une page
+   qui vend l'absence de réseau ne peut pas charger une police distante, un
+   script d'analytique ou une image hébergée ailleurs. Tout ce que ce site
+   demande au navigateur vient de ce dépôt.
+
+   Les couleurs sont celles de src/theme/tokens.ts (themeVault), pour que le site
+   et l'application soient reconnaissables comme un seul objet. */
+
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("fonts/InstrumentSerif-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("fonts/InstrumentSerif-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --paper: #f5efe3;
+  --ink: #1c1a17;
+  --ink-soft: #6b6357;
+  --accent: #e2732a;
+  --rule: #e0d6c4;
+  --card: #fffaf1;
+  --terminal: #221e19;
+  --terminal-ink: #ede6da;
+
+  /* L'orange de marque sert à décorer — filets, sur-titres, gros caractères. Il
+     ne peut pas servir à écrire : #e2732a sur le fond crème donne 2,9:1, sous le
+     seuil AA de 4,5:1. Ces deux jetons portent la même teinte assez foncée pour
+     être lue, sans changer la couleur de la marque. */
+  --link: #a8491a;
+  --cta-bg: #a8491a;
+  --cta-ink: #ffffff;
+
+  --measure: 44rem;
+  --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #14120f;
+    --ink: #f0e9dd;
+    --ink-soft: #9a9184;
+    --accent: #f0913f;
+    --rule: #2e2822;
+    --card: #1c1915;
+    --terminal: #0c0a08;
+    --terminal-ink: #ede6da;
+
+    /* Sur fond sombre la polarité s'inverse : l'orange clair est lisible en
+       texte (7,9:1) et c'est l'encre du bouton qui doit devenir sombre. */
+    --link: #f0913f;
+    --cta-bg: #f0913f;
+    --cta-ink: #14120f;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  padding: 0 1.25rem 4rem;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.65 var(--sans);
+  -webkit-text-size-adjust: 100%;
+}
+
+.wrap { max-width: var(--measure); margin: 0 auto; }
+
+a { color: var(--link); }
+a:focus-visible,
+.cta:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-radius: 4px; }
+
+/* ── En-tête ───────────────────────────────────────────────────────────── */
+
+.top {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; padding: 1.5rem 0;
+}
+
+.brand {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-family: var(--serif); font-style: italic;
+  font-size: 1.4rem; color: var(--accent); text-decoration: none;
+}
+
+.brand img { width: 30px; height: 30px; border-radius: 7px; }
+
+.top nav { display: flex; gap: 1.1rem; font-size: 0.9rem; }
+.top nav a { color: var(--ink-soft); text-decoration: none; }
+.top nav a:hover { color: var(--link); }
+
+/* ── Accroche ──────────────────────────────────────────────────────────── */
+
+.hero { padding: 2rem 0 3rem; }
+
+.hero h1 {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  font-size: clamp(2.9rem, 11vw, 4.6rem);
+  line-height: 0.98; letter-spacing: -0.01em;
+  margin: 0; text-wrap: balance;
+}
+
+.hero .lede {
+  font-size: 1.15rem; color: var(--ink-soft);
+  max-width: 34rem; margin: 1.6rem 0 0;
+}
+
+.hero .lede strong { color: var(--ink); font-weight: 600; }
+
+.rule-accent {
+  width: 5.5rem; height: 3px; background: var(--accent);
+  border: 0; margin: 1.75rem 0 0;
+}
+
+/* ── Bandeau d'état ────────────────────────────────────────────────────── */
+
+.status {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: 0.6rem;
+  padding: 1.1rem 1.25rem;
+  margin: 2.5rem 0 0;
+}
+
+.status .label {
+  font-family: var(--mono); font-size: 0.72rem;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent); margin: 0 0 0.5rem;
+}
+
+.status p { margin: 0.5rem 0 0; }
+.status p:first-of-type { margin-top: 0; }
+
+.cta {
+  display: inline-block; margin-top: 1.1rem;
+  background: var(--cta-bg); color: var(--cta-ink);
+  padding: 0.7rem 1.3rem; border-radius: 0.55rem;
+  text-decoration: none; font-weight: 600; font-size: 0.95rem;
+}
+
+.cta:hover { filter: brightness(1.06); }
+
+/* ── Sections ──────────────────────────────────────────────────────────── */
+
+section { padding: 3.25rem 0 0; }
+
+h2 {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  font-size: clamp(1.9rem, 6vw, 2.5rem);
+  line-height: 1.1; margin: 0 0 0.9rem; text-wrap: balance;
+}
+
+h3 { font-size: 1rem; margin: 0 0 0.3rem; }
+
+.eyebrow {
+  font-family: var(--mono); font-size: 0.72rem;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-soft); margin: 0 0 0.7rem;
+}
+
+section > p { max-width: 36rem; }
+
+/* ── Le bloc de preuve ─────────────────────────────────────────────────── */
+
+.proof {
+  background: var(--terminal); color: var(--terminal-ink);
+  border-radius: 0.7rem; padding: 1.4rem 1.5rem;
+  margin: 1.5rem 0 0; overflow-x: auto;
+  font-family: var(--mono); font-size: 0.86rem; line-height: 1.7;
+  /* Les sauts de ligne du HTML sont le contenu : sans ceci, la sortie de la
+     commande s'aplatit en un seul paragraphe et ne ressemble plus à rien. */
+  white-space: pre;
+}
+
+.proof .prompt { color: var(--accent); user-select: none; }
+.proof .out { color: #9a9184; }
+.proof .hit { color: #7fb069; }
+
+.proof-note {
+  font-size: 0.9rem; color: var(--ink-soft);
+  max-width: 36rem; margin: 1rem 0 0;
+}
+
+/* ── Listes de fonctionnalités ─────────────────────────────────────────── */
+
+.features { display: grid; gap: 1rem; margin: 1.5rem 0 0; padding: 0; list-style: none; }
+@media (min-width: 40rem) { .features { grid-template-columns: 1fr 1fr; } }
+
+.features li {
+  background: var(--card); border: 1px solid var(--rule);
+  border-radius: 0.6rem; padding: 1rem 1.15rem;
+}
+
+.features p { margin: 0; color: var(--ink-soft); font-size: 0.94rem; }
+
+/* ── Captures ──────────────────────────────────────────────────────────── */
+
+.shots {
+  display: flex; gap: 1rem; margin: 1.75rem 0 0;
+  overflow-x: auto; padding-bottom: 0.75rem;
+  scroll-snap-type: x mandatory;
+}
+
+.shots figure { margin: 0; flex: 0 0 min(15rem, 62vw); scroll-snap-align: start; }
+
+.shots img {
+  width: 100%; height: auto; display: block;
+  border: 1px solid var(--rule); border-radius: 0.7rem;
+}
+
+.shots figcaption {
+  font-family: var(--mono); font-size: 0.72rem;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink-soft); margin-top: 0.6rem;
+}
+
+/* ── Bloc d'honnêteté ──────────────────────────────────────────────────── */
+
+.limits {
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 1.5rem 0; margin: 1.75rem 0 0;
+}
+
+.limits ul { margin: 0.75rem 0 0; padding-left: 1.2rem; color: var(--ink-soft); }
+.limits li { margin: 0.45rem 0; }
+
+/* ── Pied ──────────────────────────────────────────────────────────────── */
+
+footer {
+  margin: 4rem 0 0; padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-soft); font-size: 0.87rem;
+}
+
+footer nav { display: flex; flex-wrap: wrap; gap: 0.5rem 1.1rem; margin-bottom: 1.1rem; }
+
+footer p { margin: 0.5rem 0 0; }
+
+/* Marqueur des informations à renseigner avant publication. Même code visuel
+   que legal/style.css : une page mise en ligne avec un trou dedans doit se
+   voir. */
+.todo {
+  background: #ffe8b0; color: #6b4a00;
+  padding: 0.1rem 0.35rem; border-radius: 0.25rem;
+  font-weight: 600; font-size: 0.92em;
+}
