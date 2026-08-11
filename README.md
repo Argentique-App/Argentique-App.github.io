@@ -10,26 +10,20 @@ traceur au passage se contredirait à voix haute.
 
 ---
 
-## L'adresse, et pourquoi elle compte
+## L'adresse
 
-Selon le nom du dépôt, GitHub Pages sert le site à deux endroits différents :
+```
+https://argentique-app.github.io
+```
 
-| Dépôt | Adresse |
-|---|---|
-| `Argentique` | `https://argentique-app.github.io/Argentique/` |
-| **`Argentique-App.github.io`** ✅ | `https://argentique-app.github.io/` |
+Le dépôt s'appelle `Argentique-App.github.io`, ce qui fait de lui le **site
+d'organisation** : GitHub Pages le sert à la racine du sous-domaine, sans segment
+de chemin. C'était le but du renommage, et ce n'était pas cosmétique — la même
+adresse est destinée au pied des affiches de Rétrospective partagées depuis
+l'application, chaîne qui part avec chaque version publiée et que les images déjà
+diffusées porteront pendant des années.
 
-**Renommer le dépôt en `Argentique-App.github.io` est recommandé**, et le moment
-de le faire est maintenant. Deux raisons :
-
-1. **L'URL de la politique de confidentialité s'affiche publiquement sur la fiche
-   Play.** Plus elle est courte, mieux c'est.
-2. **Surtout** : l'adresse est destinée à figurer en pied des affiches de
-   Rétrospective partagées depuis l'application. Cette chaîne part avec chaque
-   version publiée, et les images déjà partagées la porteront pendant des années.
-   Elle doit être choisie une fois.
-
-Le renommage ne casse rien : GitHub redirige l'ancienne adresse.
+Elle est déjà renseignée dans `LEGAL_BASE_URL` du dépôt applicatif.
 
 ## Activer Pages
 
@@ -42,24 +36,31 @@ dossiers commençant par un souligné et réécrit certaines pages.
 
 ## Ce qu'il reste à combler avant de publier
 
-Les trous sont **volontairement criards** — surlignés en jaune à l'écran, classe
-CSS `.todo`. Une page légale mise en ligne avec un trou dedans est pire que pas de
-page du tout.
+L'identité de l'éditeur est renseignée partout. **Un seul marqueur subsiste**, et
+il est délibéré :
 
-| Où | Quoi |
-|---|---|
-| `index.html`, `en/index.html` | L'adresse e-mail de contact, dans le lien « Rejoindre le test fermé » (`CONTACT@EXEMPLE.TEST`) et dans la mention sous le bouton |
-| `legal/*.html` | Dénomination, statut juridique, SIRET, adresse, e-mail, TVA, hébergeur, **médiateur de la consommation** |
+| Où | Quoi | Quand |
+|---|---|---|
+| `legal/cgv.html`, art. 10 | Le médiateur de la consommation | **Avant la première vente**, pas avant |
 
-> **Le médiateur de la consommation est obligatoire**, pas optionnel : tout
-> professionnel vendant à des consommateurs en France doit adhérer à un dispositif
-> de médiation et en publier les coordonnées (art. L612-1 c. conso). L'adhésion
-> est payante et prend quelques jours : à lancer tôt.
+L'article L612-1 du code de la consommation impose au professionnel **qui vend à
+des consommateurs** d'adhérer à un dispositif de médiation et d'en publier les
+coordonnées. L'obligation naît donc de la vente, pas de la publication d'un site
+ni d'un test fermé : tant que les produits ne sont pas ouverts à l'achat, aucun
+contrat de consommation n'est conclu.
 
-Rien n'empêche de **pousser et d'activer Pages tout de suite** — la page d'accueil
-est complète et son travail actuel est de recruter les douze testeurs du test
-fermé. Ce sont les pages légales qui doivent être finies avant le **dépôt sur
-Play**, pas avant la mise en ligne du site.
+Plutôt que de laisser un trou, l'article 10 des CGV **dit cet état** : aucun
+contenu payant n'est proposé à la vente, et le médiateur sera désigné avant la
+mise en vente effective. C'est exact aujourd'hui et ça cesse de l'être le jour où
+Play Billing encaisse le premier euro.
+
+> **Le jour où tu ouvres les ventes, cette ligne devient bloquante.** L'adhésion
+> est payante (de l'ordre de 50 € par activité) et prend quelques jours. À lancer
+> en même temps que la création des produits en Console, pas après.
+
+Les marqueurs restants sont **volontairement criards** — surlignés en jaune,
+classe CSS `.todo`. Une page légale mise en ligne avec un trou invisible dedans
+est pire que pas de page du tout.
 
 ---
 
