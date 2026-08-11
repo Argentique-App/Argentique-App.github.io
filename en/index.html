@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Argentique: your social archive, offline</title>
-<meta name="description" content="Argentique reopens the data export you download: feed, conversations, stories, retrospective. On your phone, with no account and no connection. The published build is compiled without Android's internet permission.">
+<meta name="description" content="Argentique reads the data export you download and gives you back your feed, your conversations, your stories and your retrospective. On your phone, with no account and no connection. The published build is compiled without Android's internet permission.">
 <!-- La feuille de style vit à la racine : les url() qu'elle contient se
      résolvent par rapport à elle, les polices sont donc trouvées sans copie. -->
 <link rel="stylesheet" href="../accueil.css">
@@ -12,188 +12,210 @@
 <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Argentique: your archive, offline">
-<meta property="og:description" content="Reopen your data export on your phone. No account, no server, and not even permission to reach the internet.">
+<meta property="og:description" content="Read your data export on your phone. No account, no server, and not even permission to reach the internet.">
 <meta property="og:image" content="../img/og.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 
-<div class="wrap">
-
 <header class="top">
-  <a class="brand" href="./"><img src="../img/icon.png" alt="" width="30" height="30">Argentique</a>
-  <nav>
-    <a href="#proof">The proof</a>
-    <a href="#tester">Test it</a>
-    <a href="../legal/">Legal</a>
-    <a href="../">FR</a>
-  </nav>
+  <div class="page">
+    <a class="brand" href="./"><img src="../img/icon.png" alt="" width="32" height="32">Argentique</a>
+    <nav>
+      <a href="#proof">The proof</a>
+      <a href="#tester">Test it</a>
+      <a href="../legal/">Legal</a>
+      <a href="../">FR</a>
+    </nav>
+  </div>
 </header>
 
 <main>
 
-<div class="hero">
-  <h1>your archive,<br>offline.</h1>
-  <hr class="rule-accent">
-  <p class="lede">
-    You've left the network, or you're about to. What's left is years of photos,
-    conversations and stories in a <code>.zip</code> file nobody can open.
-    <strong>Argentique reopens it</strong>: your feed, your conversations, your
-    stories, your profile and your contacts, as they were, on your phone.
-  </p>
-</div>
+<section class="band hero">
+  <div class="page">
+    <div>
+      <h1>your archive,<br>offline.</h1>
+      <hr class="rule-accent">
+      <p class="lede">
+        You've left the network, or you're about to. What's left is a
+        <code>.zip</code> file of several gigabytes that nothing really opens.
+        <strong>Argentique reads it on your phone</strong> and gives you back your
+        feed, your conversations, your stories, your profile and your contacts,
+        just as you left them.
+      </p>
+    </div>
+    <figure class="hero-shot">
+      <img src="../img/ecran-retrospective.png" alt="A retrospective card showing the hour at which the user wrote the most." width="540" height="1149">
+    </figure>
+  </div>
+</section>
 
-<div class="status" id="tester">
-  <p class="label">status · august 2026</p>
-  <p>
-    <strong>Argentique isn't published yet.</strong> It works, it's being
-    prepared for Google Play, and it needs one thing nothing can speed up:
-    <strong>twelve people testing it for fourteen consecutive days.</strong>
-    Google requires this before allowing publication.
-  </p>
-  <p>
-    You'll need an Android phone and your own data export.
-    <strong>Request it now</strong>: the platform takes anywhere from hours to
-    several days to deliver it, and that delay is what costs a week to people who
-    only think of it on installation day.
-  </p>
-  <p>
-    In exchange: full lifetime access, and my genuine thanks.
-  </p>
-  <a class="cta" href="mailto:noah.baron.pro@proton.me?subject=I%20want%20to%20test%20Argentique">Join the closed test</a>
-</div>
+<section class="band alt tight">
+  <div class="page">
+    <div class="status" id="tester">
+      <div class="status-text">
+        <p class="label">status · august 2026</p>
+        <p>
+          <strong>Argentique isn't published yet.</strong> It works, and it's
+          being prepared for Google Play. Before allowing publication, Google
+          requires twelve people to use it for fourteen days in a row.
+        </p>
+        <p>
+          You'll need an Android phone and your own data export.
+          <strong>Request it now</strong> from the platform: delivery takes
+          anywhere from a few hours to several days, which is what costs a week
+          to people who think of it on installation day.
+        </p>
+        <p>
+          Testers keep full access to the paid content after release.
+        </p>
+      </div>
+      <a class="cta" href="mailto:noah.baron.pro@proton.me?subject=I%20want%20to%20test%20Argentique">Join the closed test</a>
+    </div>
+  </div>
+</section>
 
-<section id="proof">
-  <p class="eyebrow">not a marketing claim</p>
-  <h2>no data leaves,<br>and you can check</h2>
-  <p>
-    Most apps promise not to send anything. This one <strong>cannot</strong>: the
-    published build is compiled without <code>android.permission.INTERNET</code>.
-    Without it the system denies every socket at the kernel level, whatever part
-    of the code might attempt one — including a third-party library I didn't
-    write.
-  </p>
+<section class="band" id="proof">
+  <div class="page">
+    <p class="eyebrow">verifiable</p>
+    <h2>no data leaves</h2>
 
-  <div class="proof">
+    <div class="proof-grid">
+      <div>
+        <p>
+          The published build is compiled without
+          <code>android.permission.INTERNET</code>. Android then denies every
+          connection at the kernel level, including to a third-party library I
+          didn't write. The permission doesn't exist in the binary, so there is
+          nothing to switch off and nothing to work around.
+        </p>
+        <p>
+          There is no server, no account, no analytics and no advertising. Your
+          archive stays where it is: Argentique reads the original
+          <code>.zip</code> without copying it and without modifying it.
+        </p>
+      </div>
+
+      <div>
+        <div class="proof">
 <span class="prompt">$</span> aapt2 dump permissions argentique-release.apk
 <span class="out">package: com.argentique.app</span>
 <span class="out">uses-permission: com.android.vending.BILLING</span>
 <span class="hit"># android.permission.INTERNET: absent</span>
 <span class="hit"># android.permission.SYSTEM_ALERT_WINDOW: absent</span>
+        </div>
+        <p class="proof-note">
+          Download the APK and run the command yourself. The development build
+          keeps the permission, because the development server needs it to send
+          the code to the device. Both come from the same source.
+        </p>
+      </div>
+    </div>
   </div>
-
-  <p class="proof-note">
-    Don't take my word for it: download the APK and run the command. The
-    development build does keep the permission — which is what makes the check
-    interesting, since both come from the same source.
-  </p>
-
-  <p style="margin-top:1.5rem">
-    So there is no server, no account, no analytics, no advertising. And your
-    archive is never copied: Argentique reads the original <code>.zip</code>
-    directly, and never modifies it.
-  </p>
 </section>
 
-<section>
-  <p class="eyebrow">what you get back</p>
-  <h2>everything the export holds</h2>
+<section class="band alt">
+  <div class="page">
+    <p class="eyebrow">what you get back</p>
+    <h2>everything the export holds</h2>
 
-  <ul class="features">
-    <li>
-      <h3>Your feed</h3>
-      <p>In order, with the captions of the time, carousels included.</p>
-    </li>
-    <li>
-      <h3>Your conversations</h3>
-      <p>Text, photos, videos, voice messages, shares and reactions.</p>
-    </li>
-    <li>
-      <h3>Your stories and profile</h3>
-      <p>Including what the platform kept and never showed you.</p>
-    </li>
-    <li>
-      <h3>Real search</h3>
-      <p>Across captions, message contents and usernames.</p>
-    </li>
-  </ul>
+    <ul class="features">
+      <li>
+        <h3>Your feed</h3>
+        <p>In order, with the captions of the time and the carousels.</p>
+      </li>
+      <li>
+        <h3>Your conversations</h3>
+        <p>Text, photos, videos, voice messages, shares and reactions.</p>
+      </li>
+      <li>
+        <h3>Your stories and profile</h3>
+        <p>Including what the platform kept and never showed you.</p>
+      </li>
+      <li>
+        <h3>Real search</h3>
+        <p>Across captions, message contents and usernames.</p>
+      </li>
+    </ul>
+  </div>
 </section>
 
-<section>
-  <p class="eyebrow">the waybackmachine</p>
-  <h2>pick a month.<br>the whole app folds into it.</h2>
-  <p>
-    Posts, stories, conversations, right down to the contents of each thread:
-    everything filters to the chosen month, and the interface takes on the colours
-    that year had, in light or dark.
-  </p>
-  <p>
-    The picker only offers years actually present in your archive, and marks with
-    a dot the months you posted in. Most archives only cover a handful of months —
-    better to see that straight away.
-  </p>
-</section>
-
-<section>
-  <p class="eyebrow">the retrospective</p>
-  <h2>your retrospective,<br>computed on your phone</h2>
-  <p>
-    Year-in-review features are computed on a server that reads your data. This
-    one is computed offline, from a file you downloaded yourself.
-  </p>
-  <p>
-    Year by year or across the whole archive: the person you wrote to most, the
-    accounts you followed from one end to the other, the date of your very first
-    message, the hour you actually wrote at, the rich conversations that went
-    quiet.
-  </p>
-  <p>
-    And when you share a card, there's a switch. "The person you wrote to most"
-    isn't only your data — it's theirs too. Switched on, only initials leave the
-    phone.
-  </p>
-
-  <div class="shots">
-    <figure>
-      <img src="../img/ecran-profil.png" alt="Argentique's profile screen: posts, followers, and access to the four features." width="540" height="1149" loading="lazy">
-      <figcaption>The profile</figcaption>
-    </figure>
-    <figure>
-      <img src="../img/ecran-retrospective.png" alt="A retrospective card: the hour at which the user wrote the most." width="540" height="1149" loading="lazy">
-      <figcaption>A retrospective card</figcaption>
-    </figure>
+<section class="band">
+  <div class="page split">
+    <div>
+      <p class="eyebrow">the waybackmachine</p>
+      <h2>pick a month.<br>the whole app folds into it.</h2>
+      <p>
+        Posts, stories, conversations and even the contents of each thread filter
+        down to the month you chose. The interface takes on the colours that year
+        had, in light or dark.
+      </p>
+      <p>
+        The picker only offers years present in your archive, and marks with a dot
+        the months you posted in. Many archives only cover a handful of months,
+        which is worth knowing before you go looking.
+      </p>
+    </div>
     <figure>
       <img src="../img/ecran-wayback.png" alt="The WaybackMachine picker: years present in the archive and the months lived in." width="540" height="1149" loading="lazy">
       <figcaption>The Wayback picker</figcaption>
     </figure>
   </div>
-  <p class="proof-note">
-    Screenshots taken from a demonstration archive: no real data, no real people.
-  </p>
 </section>
 
-<section>
-  <p class="eyebrow">before you install</p>
-  <h2>what Argentique cannot do</h2>
+<section class="band alt">
+  <div class="page split reverse">
+    <div>
+      <p class="eyebrow">the retrospective</p>
+      <h2>your retrospective,<br>computed on your phone</h2>
+      <p>
+        Year-in-review features are computed on the platform's servers. This one
+        is computed on your device, from a file you downloaded.
+      </p>
+      <p>
+        Year by year or across the whole archive: the person you wrote to most,
+        the accounts you've followed since the beginning, the date of your first
+        message, the hour you actually wrote at, the rich conversations that went
+        quiet.
+      </p>
+      <p>
+        Every card can be shared as an image. A switch replaces other people's
+        first names with their initial before the image leaves the phone, because
+        those names belong to people who never asked for any of this.
+      </p>
+    </div>
+    <figure>
+      <img src="../img/ecran-profil.png" alt="Argentique's profile screen: posts, followers, and access to the four features." width="540" height="1149" loading="lazy">
+      <figcaption>The profile</figcaption>
+    </figure>
+  </div>
+</section>
 
-  <div class="limits">
-    <ul>
+<section class="band">
+  <div class="page">
+    <p class="eyebrow">before you install</p>
+    <h2>what Argentique cannot do</h2>
+
+    <ul class="limits">
       <li>
-        <strong>The export only contains what you did.</strong> Likes received,
-        views on your stories, comments people left you are not in it. No app can
-        show you those, and this one doesn't pretend.
+        <strong>The export only contains what you did.</strong>
+        Likes received, views on your stories and comments people left you are
+        not in it. No app can bring those back.
       </li>
       <li>
-        <strong>It is not a backup tool.</strong> Argentique reads your files, it
-        doesn't replace them. Keep your <code>.zip</code> archives.
+        <strong>It isn't a backup.</strong>
+        Argentique reads your files without replacing them. Keep your
+        <code>.zip</code> archives somewhere.
       </li>
       <li>
-        <strong>Archive depth isn't up to it.</strong> Some exports go back to the
-        creation of the account, others start much later. The app tells you what
-        it received; it can't invent what's missing.
+        <strong>Depth depends on the export.</strong>
+        Some go back to the creation of the account, others start much later. The
+        app shows what it received.
       </li>
       <li>
-        <strong>Android only</strong> for this first release.
+        <strong>Android only</strong>
+        for this first release.
       </li>
     </ul>
   </div>
@@ -202,27 +224,31 @@
 </main>
 
 <footer>
-  <nav>
-    <a href="../legal/confidentialite.html">Privacy</a>
-    <a href="../legal/cgu.html">Terms</a>
-    <a href="../legal/cgv.html">Sales terms</a>
-    <a href="../legal/mentions-legales.html">Imprint</a>
-  </nav>
-  <p>
-    Argentique is not affiliated with, sponsored by, or endorsed by Meta
-    Platforms, Inc. It does not connect to any of its services: it reads an
-    archive file you obtain yourself and point it at.
-  </p>
-  <p>
-    The legal pages are currently available in French only.
-  </p>
-  <p>
-    This page loads no remote resources, runs no scripts and measures nothing. It
-    would have been odd if it did otherwise.
-  </p>
+  <div class="page">
+    <nav>
+      <a href="../legal/confidentialite.html">Privacy</a>
+      <a href="../legal/cgu.html">Terms</a>
+      <a href="../legal/cgv.html">Sales terms</a>
+      <a href="../legal/mentions-legales.html">Imprint</a>
+      <a href="../">Français</a>
+    </nav>
+    <p>
+      The screenshots on this page come from a demonstration archive. No real
+      data, no real people.
+    </p>
+    <p>
+      The legal pages are currently available in French only.
+    </p>
+    <p>
+      Argentique is not affiliated with, sponsored by, or endorsed by Meta
+      Platforms, Inc. It does not connect to any of its services and simply reads
+      a file you point it at.
+    </p>
+    <p>
+      This page loads no remote resources, runs no scripts and measures nothing.
+    </p>
+  </div>
 </footer>
-
-</div>
 
 </body>
 </html>
